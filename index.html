@@ -1,13 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/base.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/05cacd1f06.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="player">
+    <div class="dashboard">
+        <header class="dashboard__header">
+            <h4>Now playing:</h4>
+            <h2 class="dashboard__name-song">Name song</h2>
+        </header>
+        <div class="cd">
+            <div class="cd__thumb" style="background-image: url('https://i1.sndcdn.com/artworks-kBs4C9h7mztdJibE-M0Zh4Q-t500x500.jpg');"></div>
+        </div>
+        <div class="control">
+            <div class="btn btn-repeat">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </div>
+            <div class="btn btn-prev">
+                <i class="fa-solid fa-backward-step"></i>
+            </div>
+            <div class="btn btn-toggle-play">
+                <i class="fa-solid fa-play icon-play active"></i>
+                <i class="fa-solid fa-pause icon-pause"></i>
+            </div>
+            <div class="btn btn-next">
+                <i class="fa-solid fa-forward-step"></i>
+            </div>
+            <div class="btn-box">
+                <div class="btn btn-random">
+                    <i class="fa-solid fa-shuffle"></i>
+                </div>
+                <div class="volume-box">
+                    <i class="fa-solid fa-volume-high icon-volume"></i>
+                    <input type="range" id="volume" class="volume" value="0" step="10" min="0" max="100" id="">
+                </div>
+            </div>
+        </div>
+        <input type="range" id="progress" class="progress" value="0" step="1" min="0" max="100">
+        <audio id="audio" src=""></audio>
 
+    </div>
+    <div class="playlist">
+        <div class="song">
+            <div class="thumb" style="background-image: url('./asset/img/HAT_TruyenNgan.jpg')"></div>
+            <div class="body">
+                <h3 class="title">Music name</h3>
+                <p class="author">Singer / band</p>
+            </div>
+            <div class="option">
+                <i class="fa-solid fa-ellipsis"></i>
+                <ul class="option__menu">
+                    <li class="option__item">Remove this song</li>
+                    <li class="option__item">Remove this song</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__about">
+            <p class="footer__text">Made by WyB</p>
+        </div>
+        <div class="footer__social">
+            <a href="https://github.com/wyb-lv" class="footer__social-link">
+                <i class="fa-brands fa-github footer__social-icon"></i>
+            </a>
+            <a href="https://www.facebook.com/baohuy.vu.5?locale=vi_VN" class="footer__social-link">
+                <i class="fa-brands fa-facebook footer__social-icon"></i>
+            </a>
+            <a href=https://www.instagram.com/wyb_lv/" class="footer__social-link">
+                <i class="fa-brands fa-instagram footer__social-icon"></i>
+            </a>
+        </div>
+    </footer>
+</div>
+<script src="./src/main.js"></script>
 </body>
 </html>

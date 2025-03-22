@@ -1,0 +1,129 @@
+:root {
+    --primary-color: #A84332;  /* Màu đỏ gạch đậm, tạo cảm giác cổ điển và ấm áp */
+    --secondary-color: #A9B0B3; /* Màu bạc nhạt, tạo cảm giác nhẹ nhàng */
+    --text-color: #2C3E50; /* Màu xám đen đậm cho văn bản, phù hợp với phong cách cổ điển */
+    --white-color: #fff; /* Màu trắng nhẹ cho các chi tiết nổi bật */
+    --hover-color: #D57E69; /* Màu đỏ nhạt cho hover, gần giống màu đất nung */
+    --background-color: #D9D0C2; /* Nền màu beige nhạt, tạo cảm giác hoài cổ */
+    --border-color: #7E8C8D; /* Màu xám xanh nhẹ cho viền */
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Merriweather','Georgia', serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.player {
+    width: 100%;
+    max-width: 723px;
+    margin: 0 auto;
+    position: relative;
+    background-color: var(--white-color); /* Nền trắng cho phần nội dung */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Làm mềm và nổi bật các phần tử */
+    animation: fadeIn 1s ease-out; /* Áp dụng hiệu ứng fade-in */
+    border: 1px solid var(--border-color); /* Viền mỏng màu xám tạo cảm giác cổ điển */
+}
+
+.btn {
+    --size: 48px;
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    line-height: var(--size);
+    border-radius: 50%; /* Nút tròn */
+    cursor: pointer;
+    background-color: var(--primary-color); /* Nút có màu đỏ gạch đậm */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Chuyển động mượt mà */
+    border: 2px solid var(--border-color); /* Viền nút làm nổi bật hơn */
+}
+
+.btn i {
+    line-height: var(--size);
+    color: var(--white-color); /* Màu trắng cho biểu tượng */
+}
+
+.btn:hover {
+    background-color: var(--hover-color); /* Màu đỏ nhạt khi hover */
+    transform: scale(1.1); /* Tăng kích thước khi hover */
+}
+
+.song {
+    background-color: var(--white-color); /* Màu nền trắng cho bài hát */
+    margin-top: 12px;
+    padding: 10px 16px;
+    display: flex;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng mượt mà cho phần tử bài hát */
+    border: 1px solid var(--border-color); /* Viền mỏng màu xám tạo cảm giác cổ điển */
+}
+
+.song:active {
+    opacity: 0.8;
+}
+
+.song:hover {
+    background-color: var(--primary-color); /* Màu đỏ cho bài hát khi hover */
+}
+
+.song:hover .title,
+.song:hover .author,
+.song:hover .option {
+    color: var(--white-color);
+}
+
+.song .title {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-family:'Merriweather','Georgia', serif;
+}
+
+.song .author {
+    font-size: 1.4rem;
+    color: #7f8c8d;
+}
+
+.song .option {
+    font-size: 1.6rem;
+    color: #7f8c8d;
+}
+
+.song .option:hover {
+    color: var(--primary-color);
+}
+
+/* Animation fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .btn:hover {
+        background-color: var(--hover-color);
+    }
+
+    .btn.btn-toggle-play:hover {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+    }
+
+    .song:hover {
+        background-color: var(--primary-color);
+    }
+
+    .song:hover .title,
+    .song:hover .author,
+    .song:hover .option {
+        color: var(--white-color);
+    }
+}
